@@ -1,0 +1,706 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: Pinar;
+    src: url(../font/PINAR-DS3-BOLD.TTF);
+}
+@font-face {
+    font-family: Vogue;
+    src: url(../font/Vogue-Bold.ttf);
+}
+@font-face {
+    font-family: Vogue2;
+    src: url(../font/Vogue-Regular.ttf);
+}
+@font-face {
+    font-family: Request;
+    src: url(../font/Request.ttf);
+}
+body{
+    background: #252525;
+}
+            /* NavBar Aboute Links */
+nav{
+    display: flex;
+    direction: rtl;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 20px;
+}
+.btn-login{
+    width: 105px;
+    height: 45px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #000000;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    margin-right: 20px;
+    font-size: 15px;
+    font-family: Vogue2;
+    letter-spacing: 2px;
+}
+.btn-login:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+.btn-login:active {
+    color: #000;
+}
+.btn-login:active:after {
+    background: transparent;
+}
+.btn-login:hover:before {
+    opacity: 1;
+}
+.btn-login:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.781);
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+nav ul{
+    display: flex;
+    gap: 140px;
+}
+nav li{
+    list-style-type: none;
+}
+nav a{
+    text-decoration: none;
+    font-family: Vogue;
+    color: #ffffff;
+    position: relative;
+}
+nav a:after {
+    content: "";
+    pointer-events: none;
+    bottom: -2px;
+    left: 50%;
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    background-color: #ffffff;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: width, left;
+}
+nav a:focus:after,
+nav a:hover:after {
+    width: 100%;
+    left: 0%;
+}
+nav img{
+    width: 122px;
+    position: relative;
+}
+            /* pix shoes and About shop */
+.about-nav{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: 550px;
+    margin-bottom: 40px;
+}
+.pix-nav{
+    width: 600px;
+    position: absolute;
+    top: -50px;
+    left: 50px;
+}
+.p-nav{
+    width: 500px;
+    height: 200px;
+    position: absolute;
+    right: 170px;
+    top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.about-nav .p-1{
+    position: absolute;
+    font-family: Request;
+    color: #fff;
+    letter-spacing: 1px;
+    top: 20px;
+}
+.about-nav .p-2{
+    position: absolute;
+    bottom: 30px;
+    font-family: Request;
+    color: #fff;
+    letter-spacing: 1px;
+}
+.btn-nav{
+    width: 350px;
+    height: 70px;
+    position: absolute;
+    right: 290px;
+    top: 270px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-nav button{
+    width: 133px;
+    height: 46px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+.btn-01{
+    background-color: #002bff;
+    outline: 2px #002bff solid;
+    border: none;
+    font-size: 15px;
+    transition: background 0.2s linear;
+    font-family: Vogue2;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.btn-01:hover{
+    background: transparent;
+    box-shadow: #002bff 0px 0px 17px;
+}
+.btn-02{
+    background-color: #002bff;
+    outline: 2px #002bff solid;
+    border: none;
+    font-size: 15px;
+    transition: background 0.2s linear;
+    font-family: Vogue2;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.btn-02:hover{
+    background: transparent;
+    box-shadow: #002bff 0px 0px 17px;
+}
+.Calculations{
+    width: 400px;
+    height: 118px;
+    border: 1px #fff solid;
+    border-radius: 10px;
+    position: absolute;
+    right: 270px;
+    top: 360px;
+}
+.Cls-1{
+    width: 50%;
+    height: 118px;
+    position: absolute;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    letter-spacing: 1px;
+    font-family: Vogue2;
+}
+.Cls-1 h2{
+    margin-bottom: 5px;
+}
+.Cls-2{
+    width: 50%;
+    height: 120px;
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    letter-spacing: 1px;
+    font-family: Vogue2;
+}
+.Cls-2 h2{
+    margin-bottom: 5px;
+}
+            /* Toumbnile One */
+.TumbNile1{
+    width: 90%;
+    height: 200px;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 50px;
+}
+.pixt1{
+    width: 100%;
+    height: 120%;
+    object-fit: cover;
+    border-radius: 8px; 
+    position: absolute;
+}
+.TumbNile1-About{
+    width: 450px;
+    height: 180px;
+    position: absolute;
+    right: 0;
+    font-family: Vogue;
+    padding-left: 20px;
+}
+.TumbNile1-About p{
+    font-size: 22px;
+    margin-top: 30px;
+    color: #fff;
+}
+.TumbNile1-About h2{
+    font-size: 18px;
+    margin-top: 10px;
+    color: #fff;
+    }
+.TumbNile1-About h3{
+    margin-top: 10px;
+    color: #fff;
+}
+.TumbNile1-About button{
+    font-size: 15px;
+    margin-top: 10px;
+    margin-left: 15px;
+    width: 90px;
+    height: 30px;    
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+.spaceee{
+    height: 1000px;
+}
+            /* HOT Products List */
+.Hot-Container{
+    width: 100%;
+    height: 400px;
+    padding: 20px 20px;
+    position: relative;
+    margin-bottom: 150px;
+}
+.Hot-Title{
+    margin: auto;
+    width: 200px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.Hot-Title h2{
+    font-family: Request;
+    font-size: 15px;
+    color: #fff;
+    letter-spacing: 3px;
+}
+.Hot-Border{
+    height: 5px;
+    background: #ff0000;
+    width: 200px;
+    position: absolute;
+    bottom: 0;
+    border-radius: 22px;
+    box-shadow: #ff0000 0 0 20px 3px;
+}
+.Hot-Product{
+    width: 100%;
+    height: 350px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.Card-Product{
+    width: 240px;
+    height: 280px;
+    border-radius: 30px;
+    background: #212121;
+    box-shadow: 15px 15px 30px rgb(25, 25, 25),
+    -15px -15px 30px rgb(60, 60, 60);
+    margin: 0 10px;
+    cursor: pointer;
+    transition: all 0.25s linear;
+    text-align: center;
+    position: relative;
+    padding: 20px;
+}
+.Card-Product:hover{
+    transform: scale(1.1);
+}
+.Card-product_1{
+    width: max-content;
+    height: 60%;
+    transform: rotate(35deg);
+}
+.Card-product_2{
+    width: max-content;
+    height: 60%;
+    transform: rotate(8deg);
+}
+.Card-product_3{
+    width: max-content;
+    height: 60%;
+    transform: rotate(35deg);
+}
+.Card-product_4{
+    width: max-content;
+    height: 60%;
+}
+.Card-Product p{
+    color: #ffffff;
+    font-family: Vogue;
+    letter-spacing: 1.25px;
+    margin-top: 10px;
+    cursor: text;
+}
+.Card-Product .heart{
+    position: absolute;
+    bottom: 22px;
+    left: 30px;
+    width: 25px;
+}
+.Card-Product .AddToCart{
+    position: absolute;
+    bottom: 22px;
+    right: 30px;
+    width: 26px;
+    cursor: cell;
+}
+.MoreHotProducts{
+    margin: 10px auto;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    direction: rtl;
+    gap: 10px;
+    color: #fff;
+}
+            /* Toumbnile Tew */
+.container{
+    width: 100%;
+    height: 350px;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+.card-left{
+    width: 48%;
+    height: 300px;
+    float: left;
+    background: 
+        linear-gradient(
+            to left,
+            #181717, 
+            rgb(0 0 0 / 0)
+        ),
+            url(../Photo/pixT1.jpg);
+    border-radius: 10px;
+    object-fit: cover;
+    background-size: cover;
+    position: relative;
+    font-family: Vogue2;
+    color: #fff;
+}
+.card-right{
+    width: 48%;
+    height: 300px;
+    float: right;
+    background: 
+        linear-gradient(
+            to left,
+            #181717, 
+            rgb(0 0 0 / 0)
+        ),
+            url(../Photo/pixT2.jpg);
+    border-radius: 10px;
+    object-fit: cover;
+    background-size: cover;
+    position: relative;
+    font-family: Vogue2;
+    color: #fff;
+}
+.p1{
+    position: absolute;
+    top: 80px;
+    right: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 0px 0px 5px #000;
+}
+.p2{
+    position: absolute;
+    top: 110px;
+    right: 40px;
+    font-size: 15px;
+    font-weight: bold;
+    text-shadow: 0px 0px 5px #000;
+}
+.p3{
+    position: absolute;
+    top: 140px;
+    right: 40px;
+    font-weight: bold;
+    text-shadow: 0px 0px 5px #000;
+}
+.Btn-Buy{
+    position: absolute;
+    top: 175px;
+    right: 50px;
+    width: 90px;
+    height: 30px;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+            /* Toumbnile Three */
+.ToumbNile-Card{
+    width: 90%;
+    height: 100px;
+    border-radius: 10px;
+    position: relative;
+    background-color: rgba(55, 172, 187, 0.61);
+    margin: auto;
+    margin-bottom: 40px;
+}
+.TA-left{
+    width: 45%;
+    height: 100px;
+    position: absolute;
+    left: 0;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    direction: rtl;
+}
+.TA-left .Pix-TP{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #ffffffd0;
+    position: relative;
+}
+.Pmark{
+    position: absolute;
+    width: 28px;
+    height: 15px;
+    border-radius: 50px;
+    background-color: rgba(201, 45, 25, 0.952);
+    bottom: 0;
+    right: 0;
+    font-size: 11px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+.TA-left .P-More{
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    background: #ffffffd0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-right: 15px;
+    cursor: pointer;
+}
+.P-More p{
+    font-size: 11px;
+    font-weight: bold;
+    color: rgb(42, 196, 42);
+    text-shadow: 0 0 0 #252525;
+}
+.P-More img{
+    width: 20px;
+}
+.TA-right{
+    width: 45%;
+    height: 100px;
+    position: absolute;
+    right: 0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    direction: rtl;
+
+}
+.TA-right img{
+    width: 80px;
+}
+.TA-right .TP-1{
+    font-family: vogue1;
+    color: rgb(42, 196, 42);
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px #252525;
+}
+.TA-right .TP-2{
+    font-size: 15px;
+    background: rgb(42, 196, 42);
+    width: 100px;
+    height: 28px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #fff;
+}
+            /* Footer */
+.footer{
+    width: 100%;
+    height: 50vh;
+    position: relative;
+    background: #999595;
+}
+.hr-1{
+    height: 1px;
+    background-color: #000;
+    outline: none;
+    border: none;
+}
+.LogoAndAbout{
+    width: 500px;
+    height: 150px;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    display: flex;
+    flex-direction: column;
+    direction: rtl;
+}
+.LogoAndAbout h2{
+    float: right;
+    color: red;
+    font-size: 30px;
+}
+.LogoAndAbout .AboutContact{
+    width: 500px;
+    height: 30px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 5px;
+}
+.AboutContact .Space{
+    font-size: 20px;
+    font-weight: bold;
+}
+.BackToTop{
+    width: 143px;
+    height: 52px;
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid #000;
+    direction: rtl;
+    gap: 10px;
+}
+.footer a{
+    text-decoration: none;
+    color: #000;
+}
+.footer section{
+    width: 100%;
+    height: 60%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    direction: rtl;
+}
+.secfooter{
+    width: 25%;
+    height: 100%;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.secfooter4{
+    width: 30%;
+}
+.secfooter h3{
+    margin-bottom: 5px;
+}
+.secfooter p{
+    /* color: rgb(184, 175, 175); */
+}
+.SocialsPix img{
+    margin-left: 30px;
+    margin-top: 10px;
+}
+.secfooter h4{
+    font-size: 16px;
+    margin-top: 10px;
+}
+.SubmitEmail{
+    margin-top: 10px;
+}
+.SubmitEmail input{
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #000;
+    outline: none;
+    padding: 5px 10px;
+}
+.SubmitEmail button{
+    width: 60px;
+    height: 40px;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 10px;
+    font-weight: bold;
+    outline: none;
+    border: 1px solid #000;
+    margin-right: 10px;
+    cursor: pointer;
+}
